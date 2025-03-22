@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlockAuth | Next-Gen Authentication Platform</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="container">
+        <div class="logo">
+          <img src="assets/logo.svg" alt="BlockAuth Logo">
+          <span>BlockAuth</span>
+        </div>
+        <button class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#security">Security</a>
+          <a href="#docs">Docs</a>
+          <a href="https://github.com/yourusername/blockchain-auth-platform" class="github-link">GitHub</a>
+          <a href="#demo" class="cta-button">Try Demo</a>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Authentication for the <span class="gradient-text">Web3 Era</span></h1>
+          <p>Seamlessly combine traditional and blockchain authentication in one powerful, secure platform.</p>
+          <div class="cta-buttons">
+            <a href="#get-started" class="primary-button">Get Started</a>
+            <a href="https://github.com/yourusername/blockchain-auth-platform" class="secondary-button">View on GitHub</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="assets/hero-image.png" alt="BlockAuth Platform">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="features" class="features">
+    <div class="container">
+      <h2>Enterprise-Grade Authentication</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🔐</div>
+          <h3>Dual Authentication</h3>
+          <p>Support both traditional email/password and blockchain wallet authentication methods.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3>Seamless Integration</h3>
+          <p>Easy-to-implement APIs and SDKs for all major platforms and frameworks.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👆</div>
+          <h3>Biometric Support</h3>
+          <p>Leverage device biometrics for enhanced security and user experience.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Multi-Factor Auth</h3>
+          <p>Add additional security layers with app-based or email verification.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="security-section" id="security">
+    <div class="container">
+      <div class="security-content">
+        <h2>Security First Design</h2>
+        <p>Built from the ground up with security best practices:</p>
+        <ul class="security-features">
+          <li>JWT with refresh token rotation</li>
+          <li>Cryptographic wallet signature verification</li>
+          <li>Rate limiting and brute force protection</li>
+          <li>Secure password hashing with bcrypt</li>
+          <li>Comprehensive audit logging</li>
+        </ul>
+        <a href="#docs" class="text-link">Read our security documentation →</a>
+      </div>
+      <div class="security-image">
+        <img src="assets/security.svg" alt="Security Illustration">
+      </div>
+    </div>
+  </section>
+
+  <section class="code-section">
+    <div class="container">
+      <h2>Simple Implementation</h2>
+      <div class="code-tabs">
+        <div class="tab-buttons">
+          <button class="tab-button active" data-tab="traditional">Traditional Auth</button>
+          <button class="tab-button" data-tab="wallet">Wallet Auth</button>
+          <button class="tab-button" data-tab="mfa">MFA</button>
+        </div>
+        <div class="tab-content">
+          <div class="tab-pane active" id="traditional">
+            <pre><code>
+// Traditional Authentication
+const response = await fetch('/api/auth/login', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    email: 'user@example.com',
+    password: 'securepassword'
+  })
+});
+
+const { token, user } = await response.json();
+            </code></pre>
+          </div>
+          <div class="tab-pane" id="wallet">
+            <pre><code>
+// Wallet Authentication
+const message = await fetchAuthMessage(address);
+const signature = await wallet.signMessage(message);
+
+const response = await fetch('/api/auth/wallet-login', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ address, signature, message })
+});
+
+const { token, user } = await response.json();
+            </code></pre>
+          </div>
+          <div class="tab-pane" id="mfa">
+            <pre><code>
+// Multi-Factor Authentication
+const response = await fetch('/api/auth/verify-mfa', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    userId: user.id,
+    code: '123456'  // Code from authenticator app
+  })
+});
+
+const { verified } = await response.json();
+            </code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="get-started">
+    <div class="container">
+      <h2>Ready to get started?</h2>
+      <p>Implement enterprise-grade authentication in minutes, not days.</p>
+      <div class="cta-buttons">
+        <a href="https://github.com/yourusername/blockchain-auth-platform" class="primary-button">View on GitHub</a>
+        <a href="#docs" class="secondary-button">Read the Docs</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo" class="demo-section">
+    <div class="container">
+      <h2>Try It Yourself</h2>
+      <p>Connect your wallet to see how BlockAuth works in real-time.</p>
+      <button id="wallet-demo-button" class="primary-button">Connect Wallet</button>
+      <div class="demo-note">
+        <p>Don't have a wallet? <a href="#get-started">Learn how to set one up</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="assets/logo.svg" alt="BlockAuth Logo">
+          <span>BlockAuth</span>
+        </div>
+        <p>A modern authentication platform for Web2 and Web3 applications.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#security">Security</a>
+          <a href="#demo">Demo</a>
+        </div>
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <a href="#docs">Documentation</a>
+          <a href="#api">API Reference</a>
+          <a href="#examples">Examples</a>
+        </div>
+        <div class="footer-column">
+          <h4>Community</h4>
+          <a href="https://github.com/yourusername/blockchain-auth-platform">GitHub</a>
+          <a href="#discord">Discord</a>
+          <a href="#twitter">Twitter</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2023 BlockAuth. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
